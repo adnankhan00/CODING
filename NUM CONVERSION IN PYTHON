@@ -1,0 +1,78 @@
+from tkinter import *
+from tkinter import messagebox
+
+def ab():
+    num= str(e.get())
+    w = var.get()
+    if (w is 1):  # BINARY TO DECIMAL AND THEN TO OTHER SYSTEMS
+    # if __name__ == '__main__':
+        inp = int(num)
+        Binary = bin(inp)
+        Octal = oct(inp)
+        Decimal = inp
+        
+        Hexadecimal = hex(inp)
+    elif (w is 2):
+        inp = int(num)
+        deci=int(num,8)
+        Binary = bin(deci)
+        Octal = inp
+        Decimal = int(deci)
+        Hexadecimal = hex(deci)
+
+    elif (w is 3):
+        inp = int(num)
+        deci=int(num,2)
+        Binary = inp
+        Octal = oct(deci)
+        Decimal = int(deci)
+        Hexadecimal = hex(deci)
+    else:
+        inp = int(num)
+        deci=int(num,16)
+        Binary = bin(deci)
+        Octal = oct(deci)
+        Dcimal = int(deci)
+        Hexadecimal = hex(deci)
+    
+    result = Label(ui, text="Result:").place(x=100, y=290)
+
+    l1 = Label(ui, text="Binary              :").place(x=130, y=320)
+    l2 = Label(ui, text="Octal                 :").place(x=130, y=370)
+    l3 = Label(ui, text="Decimal             :").place(x=130, y=420)
+    l4 = Label(ui, text="Hexadecimal     :").place(x=130, y=470)
+
+    e1 = Label(ui, text=Binary).place(x=250, y=320)
+    e2 = Label(ui, text=Octal).place(x=250, y=370)
+    e3 = Label(ui, text=Decimal).place(x=250, y=420)
+    e4 = Label(ui, text=Hexadecimal).place(x=250, y=470)
+
+
+
+
+
+ui=Tk()
+# ui.config(background="light blue")
+ui.geometry("1000x600")
+a=IntVar()
+x=IntVar()
+L1=Label(ui,text="WELCOME TO NUMBER SYSTEM CONVERSION",font="chiller 22 bold",bd=10,)
+L1.pack(side=TOP,fill=X)
+L3=Label(ui,text="Enter The Number :-",font="garamond 13 bold")
+L3.place(x=120,y=70)
+e=Entry(ui,width=35,bd=2,textvariable=x)
+e.place(x=332,y=75)
+L2=Label(ui,text="Select the Type Of Input",font="garamond 12 bold",bd=10)
+L2.place(x=80,y=110)
+var=IntVar()
+C1=Radiobutton(ui,text="Decimal",font="garamond 13 bold",cursor="hand2",variable=var,value=1)
+C1.place(x=80,y=150)
+C2=Radiobutton(ui, text="Octal", font="garamond 13 bold",cursor="hand2",variable=var,value=2)
+C2.place(x=80,y=170)
+C3=Radiobutton(ui,text="Binary",font="garamond 13 bold",cursor="hand2",variable=var,value=3)
+C3.place(x=80,y=190)
+C4=Radiobutton(ui,text="HexaDecimal",font="garamond 13 bold",cursor="hand2",variable=var,value=4)
+C4.place(x=80,y=210)
+butt = Button(ui, text="Result", command=ab).place(x=390, y=220)
+
+ui.mainloop();
